@@ -49,6 +49,9 @@ dependencies {
     /* Mattermost */
     implementation 'com.google.code.gson:gson:2.10.1'
 
+    /* flyway */
+    implementation 'org.flywaydb:flyway-mysql'
+
 
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
