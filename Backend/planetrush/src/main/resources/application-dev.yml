@@ -6,6 +6,12 @@ spring:
     import: optional:file:.env[.properties]
     activate:
       on-profile: dev
+  sql:
+    init:
+      mode: always
+  flyway:
+    enabled: true
+
   datasource:
     url: ${MYSQL_MASTER_URL}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,11 +20,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    show-sql: true
+      ddl-auto: validate
     properties:
       hibernate:
         format_sql: true
